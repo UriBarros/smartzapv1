@@ -42,16 +42,9 @@ function LoginForm() {
         if (!data.isConfigured) {
           setIsConfigured(false)
 
-          // Em localhost, não forçamos o fluxo da Vercel. Mostramos instrução para configurar .env.local.
-          if (isLocalhost) {
-            setError('Configuração local incompleta: defina MASTER_PASSWORD no .env.local e reinicie o servidor (npm run dev).')
-            return
-          }
-
-          router.push('/install')
-        } else if (!data.isSetup) {
-          // Instalação incompleta - redireciona para o wizard
-          router.push('/install/wizard')
+          // Mostra instrução para configurar MASTER_PASSWORD
+          setError('Configure a variável de ambiente MASTER_PASSWORD no Vercel (ou no .env.local para desenvolvimento) e reinicie o servidor.')
+          return
         } else if (data.isAuthenticated) {
           router.push('/')
         } else if (data.company) {
@@ -138,11 +131,11 @@ function LoginForm() {
 
       {/* Card */}
       <div className="bg-[var(--ds-bg-elevated)] border border-[var(--ds-border-default)] rounded-2xl p-6 shadow-xl">
-        {!isConfigured && isLocalhost && (
-          <div className="mb-4 bg-[var(--ds-status-success-bg)] border border-[var(--ds-status-success)]/20 rounded-xl p-4">
-            <p className="text-sm text-[var(--ds-status-success-text)] font-medium">Modo local</p>
+        {!isConfigured && (
+          <div className="mb-4 bg-[var(--ds-status-warning-bg)] border border-[var(--ds-status-warning)]/20 rounded-xl p-4">
+            <p className="text-sm text-[var(--ds-status-warning-text)] font-medium">Configuração pendente</p>
             <p className="text-xs text-[var(--ds-text-secondary)] mt-1">
-              Para destravar o login no localhost, defina <code className="bg-[var(--ds-bg-surface)] px-1.5 py-0.5 rounded">MASTER_PASSWORD</code> no <code className="bg-[var(--ds-bg-surface)] px-1.5 py-0.5 rounded">.env.local</code> e reinicie o dev server.
+              Configure a variável de ambiente <code className="bg-[var(--ds-bg-surface)] px-1.5 py-0.5 rounded">MASTER_PASSWORD</code> no Vercel (ou <code className="bg-[var(--ds-bg-surface)] px-1.5 py-0.5 rounded">.env.local</code>) e reinicie o servidor.
             </p>
           </div>
         )}
@@ -175,7 +168,7 @@ function LoginForm() {
 
           <button
             type="submit"
-            disabled={isLoading || (!isConfigured && isLocalhost)}
+            disabled={isLoading || !isConfigured}
             className="w-full mt-6 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 rounded-xl transition-colors flex items-center justify-center gap-2"
           >
             {isLoading ? (

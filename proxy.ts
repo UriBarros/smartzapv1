@@ -99,11 +99,12 @@ export async function proxy(request: NextRequest) {
         }
     }
 
-    // If not configured and not already on install, redirect immediately
+    // Se não tem MASTER_PASSWORD, redireciona para login (que mostrará instrução)
+    // NÃO redireciona para /install - o wizard de instalação não é mais obrigatório
     if (!hasMasterPassword) {
-        if (!pathname.startsWith('/install') && !pathname.startsWith('/api')) {
-            const installUrl = new URL('/install', request.url)
-            return NextResponse.redirect(installUrl)
+        if (!pathname.startsWith('/install') && !pathname.startsWith('/api') && !pathname.startsWith('/login')) {
+            const loginUrl = new URL('/login', request.url)
+            return NextResponse.redirect(loginUrl)
         }
     }
 
