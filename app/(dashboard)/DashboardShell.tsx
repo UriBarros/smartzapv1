@@ -108,6 +108,7 @@ export function DashboardShell({
 
     // Estado para mostrar tour guiado após primeira conexão
     const [showGuidedTour, setShowGuidedTour] = useState(false)
+    const [dismissedOnboarding, setDismissedOnboarding] = useState(false)
     const guidedTour = useGuidedTour()
 
     // Onboarding status - usa hook dedicado com fallback em localStorage
@@ -384,7 +385,7 @@ export function DashboardShell({
     // Determina se deve mostrar o modal de onboarding do WhatsApp
     // Mostra quando: infra OK E onboarding não marcado como completo no banco
     // Só mostra modal de onboarding após carregar status do banco (evita flash)
-    const showWhatsAppOnboarding = !needsSetup && !isOnboardingStatusLoading && !isOnboardingCompletedInDb
+    const showWhatsAppOnboarding = !needsSetup && !isOnboardingStatusLoading && !isOnboardingCompletedInDb && !dismissedOnboarding
 
     // Se WhatsApp já conectado mas onboarding não completo, força ir para step de webhook
     const onboardingForceStep = isWhatsAppConnected && !isOnboardingCompletedInDb
@@ -571,6 +572,7 @@ export function DashboardShell({
                             onSaveCredentials={handleSaveCredentials}
                             onMarkComplete={handleMarkOnboardingComplete}
                             forceStep={onboardingForceStep}
+                            onClose={() => setDismissedOnboarding(true)}
                         />
                     )}
 

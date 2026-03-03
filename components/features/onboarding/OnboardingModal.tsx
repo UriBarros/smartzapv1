@@ -143,7 +143,7 @@ function TutorialWizard({
         return (
           <CreatePermanentTokenStep
             currentToken=""
-            onTokenUpdate={async () => {}}
+            onTokenUpdate={async () => { }}
             onNext={onClose}
             onBack={handleBack}
             onSkip={onClose}
@@ -387,13 +387,13 @@ export function OnboardingModal({ isConnected, onSaveCredentials, onMarkComplete
   if (!shouldShow) return null;
 
   return (
-    <Dialog open={true}>
+    <Dialog open={true} onOpenChange={(open) => { if (!open && onClose) onClose(); }}>
       <DialogContent
         className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto"
         overlayClassName="bg-black/80 backdrop-blur-sm"
-        showCloseButton={false}
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
+        showCloseButton={!!onClose}
+        onPointerDownOutside={(e) => { if (!onClose) e.preventDefault() }}
+        onEscapeKeyDown={(e) => { if (!onClose) e.preventDefault() }}
       >
         {currentStep === 'welcome' ? (
           <>
