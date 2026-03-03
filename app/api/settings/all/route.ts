@@ -137,7 +137,7 @@ async function fetchCredentials(): Promise<CredentialsData> {
     return { isConnected: false, warning: 'Supabase não configurado' }
   }
 
-  let dbSettings = { phoneNumberId: '', businessAccountId: '', accessToken: '', isConnected: false }
+  let dbSettings: any = { phoneNumberId: '', businessAccountId: '', accessToken: '', isConnected: false }
 
   try {
     dbSettings = await settingsDb.getAll()

@@ -16,11 +16,11 @@ import type { ReactNode } from 'react';
  */
 export interface AppSettings {
   /** Meta WhatsApp Phone Number ID (Deprecated) */
-  phoneNumberId: string;
+  phoneNumberId?: string;
   /** Meta Business Account ID (WABA ID) (Deprecated) */
-  businessAccountId: string;
+  businessAccountId?: string;
   /** Meta API Access Token (Deprecated) */
-  accessToken: string;
+  accessToken?: string;
   /** Evolution API URL */
   evolutionApiUrl?: string;
   /** Evolution API Key (Global or Instance) */

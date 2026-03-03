@@ -228,20 +228,20 @@ export const campaignDb = {
                 `)
                 .in('campaign_id', campaignIds)
 
-            ;(tagAssignments || []).forEach((row: any) => {
-                const campaignId = row.campaign_id
-                const tag = row.campaign_tags
-                if (tag) {
-                    const existing = tagsMap.get(campaignId) || []
-                    existing.push({
-                        id: tag.id,
-                        name: tag.name,
-                        color: tag.color,
-                        createdAt: tag.created_at,
-                    })
-                    tagsMap.set(campaignId, existing)
-                }
-            })
+                ; (tagAssignments || []).forEach((row: any) => {
+                    const campaignId = row.campaign_id
+                    const tag = row.campaign_tags
+                    if (tag) {
+                        const existing = tagsMap.get(campaignId) || []
+                        existing.push({
+                            id: tag.id,
+                            name: tag.name,
+                            color: tag.color,
+                            createdAt: tag.created_at,
+                        })
+                        tagsMap.set(campaignId, existing)
+                    }
+                })
         }
 
         return {
@@ -1912,7 +1912,7 @@ export const templateDb = {
                 parameter_format?: 'positional' | 'named' | string
                 spec_hash?: string | null
                 fetched_at?: string | null
-              }>
+            }>
     ): Promise<void> => {
         const now = new Date().toISOString()
 
@@ -2139,9 +2139,9 @@ export const settingsDb = {
     },
 
     saveAll: async (settings: AppSettings): Promise<void> => {
-        await settingsDb.set('phoneNumberId', settings.phoneNumberId)
-        await settingsDb.set('businessAccountId', settings.businessAccountId)
-        await settingsDb.set('accessToken', settings.accessToken)
+        await settingsDb.set('phoneNumberId', settings.phoneNumberId || '')
+        await settingsDb.set('businessAccountId', settings.businessAccountId || '')
+        await settingsDb.set('accessToken', settings.accessToken || '')
         await settingsDb.set('isConnected', settings.isConnected ? 'true' : 'false')
     },
 }
@@ -2390,11 +2390,11 @@ export const campaignFolderDb = {
 
         // Count campaigns per folder
         const countMap = new Map<string, number>()
-        ;(campaigns || []).forEach((c: any) => {
-            if (c.folder_id) {
-                countMap.set(c.folder_id, (countMap.get(c.folder_id) || 0) + 1)
-            }
-        })
+            ; (campaigns || []).forEach((c: any) => {
+                if (c.folder_id) {
+                    countMap.set(c.folder_id, (countMap.get(c.folder_id) || 0) + 1)
+                }
+            })
 
         return (folders || []).map(row => ({
             id: row.id,

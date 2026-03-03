@@ -206,9 +206,9 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         )
       }
-      phoneNumberId = creds.phoneNumberId
-      businessAccountId = creds.businessAccountId
-      accessToken = creds.accessToken
+      phoneNumberId = creds.phoneNumberId || ''
+      businessAccountId = creds.businessAccountId || ''
+      accessToken = creds.accessToken || ''
     }
 
     if (!phoneNumberId || !accessToken) {

@@ -77,9 +77,9 @@ export function CredentialsStep({
 
   const handleChange = (values: WhatsAppCredentials) => {
     onCredentialsChange({
-      phoneNumberId: values.phoneNumberId,
-      businessAccountId: values.businessAccountId,
-      accessToken: values.accessToken,
+      phoneNumberId: values.phoneNumberId || '',
+      businessAccountId: values.businessAccountId || '',
+      accessToken: values.accessToken || '',
       metaAppId: values.metaAppId || '',
       metaAppSecret: values.metaAppSecret,
     });

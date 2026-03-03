@@ -56,9 +56,9 @@ export function DirectCredentialsStep({
   const handleChange = useCallback(
     (values: WhatsAppCredentials) => {
       onCredentialsChange({
-        phoneNumberId: values.phoneNumberId,
-        businessAccountId: values.businessAccountId,
-        accessToken: values.accessToken,
+        phoneNumberId: values.phoneNumberId || '',
+        businessAccountId: values.businessAccountId || '',
+        accessToken: values.accessToken || '',
         metaAppId: values.metaAppId || '',
         metaAppSecret: values.metaAppSecret,
       })

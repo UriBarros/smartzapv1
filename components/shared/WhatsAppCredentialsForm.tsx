@@ -335,7 +335,7 @@ export function WhatsAppCredentialsForm({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          accessToken: sanitizeAccessToken(values.accessToken),
+          accessToken: sanitizeAccessToken(values.accessToken || ''),
           appId: values.metaAppId?.trim(),
           appSecret: values.metaAppSecret?.trim(),
         }),
@@ -706,5 +706,6 @@ export function WhatsAppCredentialsForm({
           )}
         </div>
       </div>
-      )
+    </div>
+  )
 }

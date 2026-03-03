@@ -1,0 +1,51 @@
+app/(dashboard)/settings/page.tsx(51,13): error TS2322: Type 'Dispatch<SetStateAction<AppSettings>>' is not assignable to type '(settings: AppSettings) => void'.
+  Types of parameters 'value' and 'settings' are incompatible.
+    Type 'AppSettings' is not assignable to type 'SetStateAction<AppSettings>'.
+      Type 'import("E:/smartzap-main/types").AppSettings' is not assignable to type 'import("E:/smartzap-main/types/settings.types").AppSettings'.
+        Types of property 'phoneNumberId' are incompatible.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
+app/(dashboard)/settings/page.tsx(55,13): error TS2322: Type '(settings: import("E:/smartzap-main/types/settings.types").AppSettings) => void' is not assignable to type '(settings: import("E:/smartzap-main/types").AppSettings) => void'.
+  Types of parameters 'settings' and 'settings' are incompatible.
+    Type 'import("E:/smartzap-main/types").AppSettings' is not assignable to type 'import("E:/smartzap-main/types/settings.types").AppSettings'.
+      Types of property 'phoneNumberId' are incompatible.
+        Type 'string | undefined' is not assignable to type 'string'.
+          Type 'undefined' is not assignable to type 'string'.
+app/api/settings/all/route.ts(143,5): error TS2322: Type 'AppSettings' is not assignable to type '{ phoneNumberId: string; businessAccountId: string; accessToken: string; isConnected: boolean; }'.
+  Types of property 'phoneNumberId' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+app/api/settings/credentials/route.ts(31,7): error TS2322: Type 'AppSettings' is not assignable to type '{ phoneNumberId: string; businessAccountId: string; accessToken: string; isConnected: boolean; }'.
+  Types of property 'phoneNumberId' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+app/api/settings/test-connection/route.ts(209,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+app/api/settings/test-connection/route.ts(210,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+app/api/settings/test-connection/route.ts(211,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/CredentialsStep.tsx(80,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/CredentialsStep.tsx(81,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/CredentialsStep.tsx(82,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/DirectCredentialsStep.tsx(59,9): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/DirectCredentialsStep.tsx(60,9): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/onboarding/steps/DirectCredentialsStep.tsx(61,9): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+components/features/setup/CredentialsModal.tsx(48,5): error TS18048: 'credentials.phoneNumberId' is possibly 'undefined'.
+components/features/setup/CredentialsModal.tsx(49,5): error TS18048: 'credentials.businessAccountId' is possibly 'undefined'.
+components/features/setup/CredentialsModal.tsx(50,5): error TS18048: 'credentials.accessToken' is possibly 'undefined'.
+components/features/setup/CredentialsModal.tsx(75,26): error TS18048: 'credentials.phoneNumberId' is possibly 'undefined'.
+components/features/setup/CredentialsModal.tsx(76,30): error TS18048: 'credentials.businessAccountId' is possibly 'undefined'.
+components/features/setup/CredentialsModal.tsx(77,24): error TS18048: 'credentials.accessToken' is possibly 'undefined'.
+lib/supabase-db.ts(2142,47): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+lib/supabase-db.ts(2143,51): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+lib/supabase-db.ts(2144,45): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.

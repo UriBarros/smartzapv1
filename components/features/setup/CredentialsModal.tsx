@@ -45,9 +45,9 @@ export function CredentialsModal({
   const [errorMessage, setErrorMessage] = useState('')
 
   const isFormValid =
-    credentials.phoneNumberId.trim() &&
-    credentials.businessAccountId.trim() &&
-    credentials.accessToken.trim()
+    credentials.phoneNumberId?.trim() &&
+    credentials.businessAccountId?.trim() &&
+    credentials.accessToken?.trim()
 
   // Handler para mudança de valores
   const handleChange = useCallback((values: WhatsAppCredentials) => {
@@ -72,9 +72,9 @@ export function CredentialsModal({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          phoneNumberId: credentials.phoneNumberId.trim(),
-          businessAccountId: credentials.businessAccountId.trim(),
-          accessToken: credentials.accessToken.trim(),
+          phoneNumberId: credentials.phoneNumberId?.trim() || '',
+          businessAccountId: credentials.businessAccountId?.trim() || '',
+          accessToken: credentials.accessToken?.trim() || '',
         }),
       })
 

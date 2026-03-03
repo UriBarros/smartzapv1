@@ -20,7 +20,7 @@ export async function GET() {
     }
 
     // Buscar do banco de dados
-    let dbSettings = {
+    let dbSettings: any = {
       phoneNumberId: '',
       businessAccountId: '',
       accessToken: '',

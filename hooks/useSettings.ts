@@ -532,8 +532,8 @@ export const useSettingsController = () => {
     try {
       // 2. Fetch Real Data from Meta
       const metaData = await settingsService.fetchPhoneDetails({
-        phoneNumberId: formSettings.phoneNumberId,
-        accessToken: formSettings.accessToken
+        phoneNumberId: formSettings.phoneNumberId || '',
+        accessToken: formSettings.accessToken || ''
       });
 
       // 3. Merge Data
