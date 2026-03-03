@@ -40,13 +40,17 @@
      Clean, professional, high contrast
      ================================ */
 
-  /* DS - Backgrounds (LIGHT MODE - Geist style) */
-  --ds-bg-base: #ffffff;
-  --ds-bg-elevated: #fafafa;
-  --ds-bg-surface: #f4f4f5;
-  --ds-bg-overlay: rgba(255, 255, 255, 0.95);
-  --ds-bg-glass: rgba(250, 250, 250, 0.85);
-  --ds-bg-hover: rgba(0, 0, 0, 0.04);
+  /* DS - Backgrounds (LIGHT MODE - Branco Gelo / Ice White) */
+  --ds-bg-base: #f8fafc;
+  /* slate-50 - ice white bg */
+  --ds-bg-elevated: #ffffff;
+  /* pure white for cards to pop out */
+  --ds-bg-surface: #f1f5f9;
+  /* slate-100 */
+  --ds-bg-overlay: rgba(248, 250, 252, 0.95);
+  --ds-bg-glass: rgba(255, 255, 255, 0.85);
+  --ds-bg-hover: rgba(15, 23, 42, 0.04);
+  /* slate-900 / 4% */
 
   /* DS - Text colors (LIGHT MODE - Geist style - high contrast) */
   --ds-text-primary: #0a0a0a;
@@ -55,10 +59,13 @@
   --ds-text-brand: #059669;
   --ds-text-disabled: #a3a3a3;
 
-  /* DS - Border colors (LIGHT MODE - Geist style - visible but elegant) */
-  --ds-border-subtle: rgba(0, 0, 0, 0.06);
-  --ds-border-default: rgba(0, 0, 0, 0.09);
-  --ds-border-strong: rgba(0, 0, 0, 0.14);
+  /* DS - Border colors (LIGHT MODE - Branco Gelo style) */
+  --ds-border-subtle: #f1f5f9;
+  /* slate-100 */
+  --ds-border-default: #e2e8f0;
+  /* slate-200 */
+  --ds-border-strong: #cbd5e1;
+  /* slate-300 */
   --ds-border-focus: #10b981;
 
   /* DS - Status colors (LIGHT MODE - Geist style) */
@@ -242,16 +249,22 @@
      INTERNATIONAL PHONE INPUT THEME (LIGHT MODE)
      ================================ */
   --react-international-phone-height: 48px;
-  --react-international-phone-background-color: #f4f4f5; /* zinc-100 */
-  --react-international-phone-text-color: #18181b; /* zinc-900 */
+  --react-international-phone-background-color: #f4f4f5;
+  /* zinc-100 */
+  --react-international-phone-text-color: #18181b;
+  /* zinc-900 */
   --react-international-phone-font-size: 14px;
-  --react-international-phone-border-radius: 0.75rem; /* rounded-xl */
-  --react-international-phone-border-color: #d4d4d8; /* zinc-300 */
+  --react-international-phone-border-radius: 0.75rem;
+  /* rounded-xl */
+  --react-international-phone-border-color: #d4d4d8;
+  /* zinc-300 */
 
   --react-international-phone-country-selector-background-color: #f4f4f5;
-  --react-international-phone-country-selector-background-color-hover: #e4e4e7; /* zinc-200 */
+  --react-international-phone-country-selector-background-color-hover: #e4e4e7;
+  /* zinc-200 */
   --react-international-phone-country-selector-border-color: #d4d4d8;
-  --react-international-phone-country-selector-arrow-color: #52525b; /* zinc-600 */
+  --react-international-phone-country-selector-arrow-color: #52525b;
+  /* zinc-600 */
 
   --react-international-phone-dropdown-item-background-color: #ffffff;
   --react-international-phone-dropdown-item-text-color: #18181b;
@@ -794,10 +807,8 @@ textarea:focus-visible {
   body {
     @apply bg-background text-foreground;
     font-family: var(--ds-font-body);
-    background-image: radial-gradient(
-      rgba(255, 255, 255, 0.08) 1px,
-      transparent 1px
-    );
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px,
+        transparent 1px);
     background-size: 24px 24px;
     background-position: 0 0;
   }
@@ -1011,6 +1022,7 @@ textarea:focus-visible {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(100vh);
   }
@@ -1022,13 +1034,11 @@ textarea:focus-visible {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(10, 189, 198, 0.02) 2px,
-    rgba(10, 189, 198, 0.02) 4px
-  );
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(10, 189, 198, 0.02) 2px,
+      rgba(10, 189, 198, 0.02) 4px);
   animation: br-scanline-scroll 30s linear infinite;
 }
 
@@ -1036,6 +1046,7 @@ textarea:focus-visible {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 0 100px;
   }
@@ -1065,9 +1076,12 @@ textarea:focus-visible {
 
 /* Voight-Kampff eye scanning animation */
 @keyframes br-eye-scan {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(-100%);
   }
+
   50% {
     transform: translateX(100%);
   }
@@ -1079,10 +1093,13 @@ textarea:focus-visible {
 
 /* Pulse glow animation */
 @keyframes br-pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
     box-shadow: 0 0 5px var(--br-neon-cyan);
   }
+
   50% {
     opacity: 1;
     box-shadow: 0 0 20px var(--br-neon-cyan), 0 0 40px rgba(10, 189, 198, 0.5);
@@ -1098,18 +1115,23 @@ textarea:focus-visible {
   0% {
     transform: translate(0);
   }
+
   20% {
     transform: translate(-2px, 2px);
   }
+
   40% {
     transform: translate(-2px, -2px);
   }
+
   60% {
     transform: translate(2px, 2px);
   }
+
   80% {
     transform: translate(2px, -2px);
   }
+
   100% {
     transform: translate(0);
   }
@@ -1121,9 +1143,12 @@ textarea:focus-visible {
 
 /* Terminal cursor blink */
 @keyframes br-cursor-blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -1135,13 +1160,11 @@ textarea:focus-visible {
 
 /* Progress bar segments (not smooth) */
 .br-progress-segment {
-  background: linear-gradient(
-    90deg,
-    var(--br-neon-cyan) 0%,
-    var(--br-neon-cyan) 90%,
-    transparent 90%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      var(--br-neon-cyan) 0%,
+      var(--br-neon-cyan) 90%,
+      transparent 90%,
+      transparent 100%);
   background-size: 10px 100%;
 }
 
@@ -1183,9 +1206,13 @@ textarea:focus-visible {
 
 /* Typing indicator animation */
 @keyframes typing-dot {
-  0%, 60%, 100% {
+
+  0%,
+  60%,
+  100% {
     transform: translateY(0);
   }
+
   30% {
     transform: translateY(-4px);
   }
