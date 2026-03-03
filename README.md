@@ -3,13 +3,13 @@
 Um gerenciador completo para automação de marketing inteligente e CRM integrado via **WhatsApp**, utilizando a **Evolution API**.
 Projetado para ser um SaaS multi-tenant ou uso interno com escalabilidade moderna, este projeto foi desenvolvido com tecnologias de ponta.
 
-![SmartZap Login Area](https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop)
+![Registro de Identidade](./public/docs/identity-login.png)
 
 ## ✨ Principais Funcionalidades
 
 - **Automação de Marketing:** Dispare campanhas em massa de forma inteligente.
 - **CRM Integrado:** Gerencie seus contatos (Leads), templates e submissões em uma *Inbox* visual incrível.
-- **Onboarding e Assistente de Instalação (Setup Wizard):** Todo o fluxo de saúde da aplicação e provisionamento de infraestrutura conta com um visual imersivo e *Cyberpunk*.
+- **Onboarding e Assistente de Instalação (Setup Wizard):** Todo o fluxo de saúde da aplicação e provisionamento de infraestrutura conta com um visual imersivo e *Cyberpunk*, desde a tela de Registro de Identidade.
 - **Integração Evolution API:** Conectividade escalável para envios massivos simulando humano e gerenciamento de sessões no WhatsApp.
 - **Filas de Tarefas Assíncronas:** Gerenciamento pesado de tarefas via QStash e Background Jobs seguros.
 - **Aesthetic Premium:** Uma UI/UX inspirada num design Neon/Dark Mode limpo e sofisticado com *TailwindCSS*, *Framer Motion* e *shadcn/ui*.
@@ -55,10 +55,6 @@ npm install
 # 4. Inicie o Servidor de Desenvolvimento
 npm run dev
 ```
-
-*Nota: No ambiente local (`localhost`), a verificação de infraestrutura e bloqueio de configuração de banco de dados e senhas costumam ser ignoradas para possibilitar o preview do layout livremente.*
-
-![SmartZap Dashboard](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop)
 
 ---
 © 2024-2026 SmartZap Software. Todos os direitos reservados.
